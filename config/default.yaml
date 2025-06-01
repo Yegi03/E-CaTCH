@@ -1,0 +1,78 @@
+# Model Configuration
+model:
+  text_encoder:
+    model_name: 'bert-base-uncased'
+    max_length: 512
+    freeze_backbone: true
+    
+  image_encoder:
+    model_name: 'resnet50'
+    pretrained: true
+    freeze_backbone: true
+    
+  embed_dim: 768
+  num_heads: 8
+  lstm_hidden_dim: 512
+  num_lstm_layers: 2
+  dropout: 0.1
+  alpha: 0.1  # Decay coefficient for temporal weighting
+
+# Training Configuration
+training:
+  num_epochs: 100
+  batch_size: 32
+  learning_rate: 1e-4
+  weight_decay: 0.01
+  grad_clip: true
+  grad_clip_norm: 1.0
+  l2_lambda: 0.01
+  
+  # Loss weights
+  lambda_tc: 0.1  # Temporal consistency loss weight
+  lambda_reg: 0.01  # L2 regularization weight
+  
+  # Optimizer
+  optimizer:
+    type: 'adamw'
+    betas: [0.9, 0.999]
+    eps: 1e-8
+    
+  # Scheduler
+  scheduler:
+    type: 'cosine'  # Options: cosine, plateau, step
+    warmup_steps: 1000
+    min_lr: 1e-6
+    patience: 10  # For plateau scheduler
+    factor: 0.1  # For step scheduler
+    step_size: 30  # For step scheduler
+    
+  # Early stopping
+  early_stopping: true
+  early_stopping_patience: 10
+  early_stopping_min_delta: 0.0
+  
+  # Checkpointing
+  save_checkpoints: true
+  checkpoint_dir: 'checkpoints'
+  
+  # Logging
+  log_dir: 'logs'
+  log_every_n_steps: 100
+  
+  # Hard example mining
+  hard_example_mining:
+    enabled: true
+    k: 10  # Number of hard examples to select
+    
+# Data Configuration
+data:
+  train_path: 'data/train'
+  val_path: 'data/val'
+  test_path: 'data/test'
+  num_workers: 4
+  pin_memory: true
+  
+# Device Configuration
+device:
+  use_cuda: true
+  cuda_device: 0  # GPU device index 
