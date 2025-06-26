@@ -180,7 +180,7 @@ If you find this code useful for your research, please cite our paper:
   title={E-CaTCH: Event-Centric Cross-Modal Attention with Temporal Consistency and Class-Imbalance Handling for Misinformation Detection},
   author={Mousavi, Ahmad and Abdollahinejad, Yeganeh and Corizzo, Roberto and Japkowicz, Nathalie and Boukouvalas, Zois},
   journal={Information Fusion},
-  year={2024}
+  year={2025}
 }
 ```
 
