@@ -176,11 +176,14 @@ E-CaTCH consists of several key components:
 If you find this code useful for your research, please cite our paper:
 
 ```bibtex
-@article{ecatch2024,
-  title={E-CaTCH: Event-Centric Cross-Modal Attention with Temporal Consistency and Class-Imbalance Handling for Misinformation Detection},
-  author={Mousavi, Ahmad and Abdollahinejad, Yeganeh and Corizzo, Roberto and Japkowicz, Nathalie and Boukouvalas, Zois},
-  journal={Information Fusion},
-  year={2025}
+@misc{mousavi2025ecatcheventcentriccrossmodalattention,
+      title={E-CaTCH: Event-Centric Cross-Modal Attention with Temporal Consistency and Class-Imbalance Handling for Misinformation Detection}, 
+      author={Ahmad Mousavi and Yeganeh Abdollahinejad and Roberto Corizzo and Nathalie Japkowicz and Zois Boukouvalas},
+      year={2025},
+      eprint={2508.11197},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2508.11197}, 
 }
 ```
 
